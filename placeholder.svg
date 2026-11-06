@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="STYLEHUB image placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#efe9e1"/>
+      <stop offset="1" stop-color="#d9cfc2"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bg)"/>
+  <!-- simple hanger + garment outline -->
+  <g fill="none" stroke="#9a8b78" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M300 250c0-24 24-24 24-48a24 24 0 1 0-48 0"/>
+    <path d="M300 250 140 350a20 20 0 0 0 10 37h300a20 20 0 0 0 10-37z"/>
+    <path d="M170 387v210h260V387"/>
+  </g>
+  <text x="300" y="680" text-anchor="middle" font-family="Georgia, serif" font-size="34" letter-spacing="8" fill="#7d6f5d">STYLEHUB</text>
+</svg>

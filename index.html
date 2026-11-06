@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="STYLEHUB - Redefine your wardrobe with the latest fashion trends.">
+  <title>STYLEHUB | Discover Your Style</title>
+
+  <!-- Fonts: Playfair Display (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ SVG ICON SPRITE (reused with <use href="#id">) ============ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.76L20 8H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.7 7.9 3.6 5 6.7 5c1.9 0 3.5 1 5.3 3 1.8-2 3.4-3 5.3-3 3.1 0 5 2.900 3.900 6.100-1.700 4.800-9.200 9.400-9.200 9.400z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.700 5.700 6.300.8-4.600 4.300 1.200 6.200L12 17l-5.600 3 1.200-6.200L3 9.500l6.300-.8z" fill="currentColor"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.800 0-5 2.200-5 5v2H6v4h3v6h4v-6h3l1-4h-4V9c0-.6.400-1 1-1z" fill="currentColor"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.500" y="3.500" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.200" cy="6.800" r="1.200" fill="currentColor"/></symbol>
+    <symbol id="i-twitter" viewBox="0 0 24 24"><path d="M4 4l6.500 8.700L4.300 20h2l5.100-5.900L15.800 20H20l-6.800-9.100L19.100 4h-2l-4.700 5.400L8.300 4z" fill="currentColor"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M21.500 8.200a2.500 2.500 0 0 0-1.800-1.800C18.100 6 12 6 12 6s-6.100 0-7.700.4A2.500 2.500 0 0 0 2.500 8.200C2 9.800 2 12 2 12s0 2.200.5 3.800a2.500 2.500 0 0 0 1.800 1.800C5.900 18 12 18 12 18s6.100 0 7.700-.4a2.500 2.500 0 0 0 1.800-1.800c.5-1.600.5-3.800.5-3.800s0-2.200-.5-3.800z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m10 9.500 5 2.500-5 2.500z" fill="currentColor"/></symbol>
+  </svg>
+
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#products">Skip to products</a>
+
+  <!-- ============ 1. NAVIGATION BAR ============ -->
+  <header class="site-header" id="home">
+    <div class="container nav-bar">
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+        <svg class="icon"><use href="#i-menu"/></svg>
+      </button>
+
+      <a href="#home" class="logo" aria-label="STYLEHUB home">STYLE<span>HUB</span></a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home" class="nav-link active" data-nav="home">Home</a></li>
+          <li><a href="#products" class="nav-link" data-nav="men">Men</a></li>
+          <li><a href="#products" class="nav-link" data-nav="women">Women</a></li>
+          <li><a href="#products" class="nav-link" data-nav="new">New Arrivals</a></li>
+          <li><a href="#products" class="nav-link nav-sale" data-nav="sale">Sale</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Search products" aria-expanded="false" aria-controls="searchBar">
+          <svg class="icon"><use href="#i-search"/></svg>
+        </button>
+        <button class="icon-btn" id="wishlistBtn" aria-label="Open wishlist">
+          <svg class="icon"><use href="#i-heart"/></svg>
+          <span class="count-badge" id="wishlistCount">0</span>
+        </button>
+        <button class="icon-btn" id="cartBtn" aria-label="Open shopping cart">
+          <svg class="icon"><use href="#i-cart"/></svg>
+          <span class="count-badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Slide-down search bar -->
+    <div class="search-bar" id="searchBar" hidden>
+      <div class="container">
+        <label for="searchInput" class="visually-hidden">Search products by name</label>
+        <input type="search" id="searchInput" placeholder="Search for shirts, dresses, sneakers..." autocomplete="off">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ 2. HERO SECTION ============ -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-content container">
+        <p class="eyebrow">New Season Collection 2026</p>
+        <h1 id="heroTitle">Discover Your Style</h1>
+        <p class="hero-sub">Redefine your wardrobe with the latest fashion trends.</p>
+        <div class="hero-buttons">
+          <a href="#products" class="btn btn-primary" data-shop-all>Shop Now</a>
+          <a href="#categories" class="btn btn-outline-light">Explore Collection</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. CATEGORIES SECTION ============ -->
+    <section class="section container" id="categories" aria-labelledby="catTitle">
+      <div class="section-head">
+        <p class="eyebrow dark">Browse by</p>
+        <h2 id="catTitle">Shop by Category</h2>
+      </div>
+
+      <div class="category-grid">
+        <a href="#products" class="category-card" data-category="men">
+          <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=700&q=80" alt="Men's fashion" loading="lazy">
+          <div class="category-label"><h3>Men's Fashion</h3><span>Shop now &rarr;</span></div>
+        </a>
+        <a href="#products" class="category-card" data-category="women">
+          <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=80" alt="Women's fashion" loading="lazy">
+          <div class="category-label"><h3>Women's Fashion</h3><span>Shop now &rarr;</span></div>
+        </a>
+        <a href="#products" class="category-card" data-category="accessories">
+          <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80" alt="Accessories" loading="lazy">
+          <div class="category-label"><h3>Accessories</h3><span>Shop now &rarr;</span></div>
+        </a>
+        <a href="#products" class="category-card" data-category="shoes">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="Shoes" loading="lazy">
+          <div class="category-label"><h3>Shoes</h3><span>Shop now &rarr;</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ 4 & 5. FEATURED PRODUCTS + FILTERING / SORTING ============ -->
+    <section class="section container" id="products" aria-labelledby="prodTitle">
+      <div class="section-head">
+        <p class="eyebrow dark">Handpicked for you</p>
+        <h2 id="prodTitle">Featured Products</h2>
+      </div>
+
+      <!-- Filter toolbar -->
+      <div class="toolbar">
+        <div class="chips" id="categoryChips" role="group" aria-label="Filter by category">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="men">Men</button>
+          <button class="chip" data-filter="women">Women</button>
+          <button class="chip" data-filter="accessories">Accessories</button>
+          <button class="chip" data-filter="shoes">Shoes</button>
+          <button class="chip" data-filter="new">New</button>
+          <button class="chip" data-filter="sale">Sale</button>
+        </div>
+
+        <div class="selects">
+          <label class="select-wrap">
+            <span class="visually-hidden">Filter by price</span>
+            <select id="priceFilter">
+              <option value="all">All prices</option>
+              <option value="0-1000">Under ₹1,000</option>
+              <option value="1000-2500">₹1,000 – ₹2,500</option>
+              <option value="2500-5000">₹2,500 – ₹5,000</option>
+              <option value="5000-999999">Above ₹5,000</option>
+            </select>
+          </label>
+          <label class="select-wrap">
+            <span class="visually-hidden">Sort products</span>
+            <select id="sortSelect">
+              <option value="featured">Sort: Featured</option>
+              <option value="low-high">Price: Low to High</option>
+              <option value="high-low">Price: High to Low</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <p class="result-info" id="resultInfo" aria-live="polite"></p>
+
+      <!-- Product cards are rendered here by script.js -->
+      <div class="product-grid" id="productGrid"></div>
+
+      <!-- Shown when no product matches the filters -->
+      <div class="no-results" id="noResults" hidden>
+        <p>No products match your search.</p>
+        <button class="btn btn-dark" id="resetFilters">Clear all filters</button>
+      </div>
+    </section>
+
+    <!-- ============ 8. PROMOTIONAL BANNER ============ -->
+    <section class="promo" aria-labelledby="promoTitle">
+      <div class="promo-inner container">
+        <p class="eyebrow">Limited time offer</p>
+        <h2 id="promoTitle">UP TO 50% OFF – SEASONAL SALE</h2>
+        <a href="#products" class="btn btn-primary" data-promo-sale>Shop Now</a>
+      </div>
+    </section>
+
+    <!-- ============ 9. NEWSLETTER SECTION ============ -->
+    <section class="section container newsletter" aria-labelledby="newsTitle">
+      <h2 id="newsTitle">Join the STYLEHUB Club</h2>
+      <p>Subscribe for early access to new drops, style tips and exclusive offers.</p>
+      <form class="newsletter-form" id="newsletterForm" novalidate>
+        <label for="newsEmail" class="visually-hidden">Email address</label>
+        <input type="email" id="newsEmail" placeholder="Enter your email address" autocomplete="email" required>
+        <button type="submit" class="btn btn-dark">Subscribe</button>
+      </form>
+      <p class="form-message" id="newsMessage" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <!-- ============ 10. FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col about">
+        <a href="#home" class="logo logo-light">STYLE<span>HUB</span></a>
+        <p>STYLEHUB brings you modern, premium fashion for every occasion — thoughtfully designed, ethically made and delivered across India.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg class="icon"><use href="#i-facebook"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"/></svg></a>
+          <a href="#" aria-label="Twitter / X"><svg class="icon"><use href="#i-twitter"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg class="icon"><use href="#i-youtube"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#products">Featured Products</a></li>
+          <li><a href="#products" data-promo-sale>Sale</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Customer Support</h3>
+        <ul>
+          <li><a href="#">Track Your Order</a></li>
+          <li><a href="#">Shipping &amp; Delivery</a></li>
+          <li><a href="#">Returns &amp; Exchanges</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <address>
+          <p>12 Fashion Street, Banjara Hills<br>Hyderabad, Telangana 500034</p>
+          <p><a href="mailto:support@stylehub.example">support@stylehub.example</a></p>
+          <p><a href="tel:+911234567890">+91 12345 67890</a></p>
+          <p>Mon – Sat, 10 AM – 7 PM</p>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2026</span> STYLEHUB. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============ 6. SHOPPING CART DRAWER ============ -->
+  <aside class="drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-head">
+      <h2>Your Cart</h2>
+      <button class="icon-btn" data-close-drawer aria-label="Close cart"><svg class="icon"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="drawer-body" id="cartItems"></div>
+    <div class="drawer-foot" id="cartFooter">
+      <div class="total-row"><span>Total</span><strong id="cartTotal">₹0</strong></div>
+      <button class="btn btn-dark btn-block" id="checkoutBtn">Checkout</button>
+      <button class="link-btn" id="clearCartBtn">Clear cart</button>
+    </div>
+  </aside>
+
+  <!-- ============ 7. WISHLIST DRAWER ============ -->
+  <aside class="drawer" id="wishlistDrawer" aria-label="Wishlist" aria-hidden="true">
+    <div class="drawer-head">
+      <h2>Your Wishlist</h2>
+      <button class="icon-btn" data-close-drawer aria-label="Close wishlist"><svg class="icon"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="drawer-body" id="wishlistItems"></div>
+  </aside>
+
+  <!-- Dark overlay behind drawers / mobile menu -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Small pop-up message -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
